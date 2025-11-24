@@ -44,15 +44,15 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-            Moojee's <span className="text-yellow-500">Library</span>
+          <h1 className="text-4xl font-extrabold text-gray-700 mb-4">
+            ฝังร่างกับ <span className="text-yellow-500">กองหนังสือ</span>
           </h1>
           <p className="text-gray-500">
             พื้นที่เก็บรวมรวมหนังสือพร้อมแสดงความคิดเห็นและความรู้สึกส่วนตัวหลังการอ่าน
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredBooks.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
