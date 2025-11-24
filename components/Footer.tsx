@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <div className="text-center py-8 border-t border-gray-100 mt-auto text-gray-400">
-        Mookee Books Reviews
+        Moojee Books Reviews
       </div>
     </>
   );
