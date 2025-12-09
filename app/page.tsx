@@ -6,6 +6,7 @@ import BookCard from "@/components/BookCard";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/Hero";
 
 export default function Home() {
   const [books, setBooks] = useState<Book[]>([]);
@@ -39,19 +40,18 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFDFD] font-sans pb-20">
+    <div className="min-h-screen bg-[#FDFDFD] font-sans pb-20 ">
       <Navbar showSearch={true} onSearch={handleSearch} />
+      <HeroSection />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-700 mb-4">
-            ฝังร่างกับ <span className="text-yellow-500">กองหนังสือ</span>
-          </h1>
-          <p className="text-gray-500">
-            พื้นที่เก็บรวมรวมหนังสือพร้อมแสดงความคิดเห็นและความรู้สึกส่วนตัวหลังการอ่าน
-          </p>
-        </div>
-
+      <main
+        id="showbook"
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 scroll-padding-top "
+      >
+        <h2
+          className=" text-center  mt-12 text-2xl md:text-3xl font-bold mb-12 leading-none text-gray-600"
+        > Books Reviews
+        </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredBooks.map((book) => (
             <BookCard key={book.id} book={book} />
@@ -59,12 +59,10 @@ export default function Home() {
         </div>
 
         {filteredBooks.length === 0 && (
-          <div className="text-center text-gray-400 mt-10">
-            ไม่พบหนังสือ
-          </div>
+          <div className="text-center text-gray-400 mt-10">ไม่พบหนังสือ</div>
         )}
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
